@@ -1,0 +1,46 @@
+{% extends "base.html" %} 
+{% load staticfiles %}
+{% block body_block %}
+<style>
+body{
+{% load staticfiles %}
+background-image:url({% static 'backgroundimage.gif' %});
+}
+input[type=text], input[type=number], input[type=email], input[type=image], input[type=password] {
+    color: #777;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    width: 290px;
+    margin-left: 18px;
+    height: 35px;
+    border: 1px solid #c7d0d2;
+    border-radius: 2px;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease;
+}
+input[type=text]:hover, input[type=number]:hover, input[type=email]:hover, input[type=image]:hover, input[type=password]:hover {
+    border: 1px solid #b6bfc0;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .7), 0 0 0 5px #f5f7f8;
+} 
+input[type=text]:focus, input[type=number]:focus, input[type=email]:focus,input [type=image]:focus,input [type=password]:focus {
+    border: 1px solid #a8c9e4;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #e6f2f9;
+}
+}
+</style>
+<div id="container">
+{% if registered %}
+<h1>Thank you for registering!</h1>
+{% else %}
+<h1>Register Here</h1>
+<h3>Just fill out the form.</h3>
+<form method="POST">
+{% csrf_token %}
+{{ user_form.as_p }}
+<input type="submit" value="Register"> </form>
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,4 @@
+Django==2.2
+mysqlclient==1.4.6
+Pillow==9.4.0
+

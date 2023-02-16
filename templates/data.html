@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>DS project</title>
+</head>
+<style>
+body{
+    {% load staticfiles %}
+
+background-image:url({% static "backgroundimage.gif" %});
+}
+input {
+font-family: "Helvetica Neue", Helvetica, sans-serif; 
+font-size: 12px;
+outline: none;
+}
+input[type=text], input[type=number], input[type=image]{
+color: #777;
+padding-left: 10px;
+margin: 10px;
+margin-top: 12px;
+margin-left: 18px;
+width: 290px;
+
+height: 35px;
+border: 1px solid #c7d0d2;
+border-radius: 2px;
+box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
+ -webkit-transition: all .4s ease;
+-moz-transition: all .4s ease;
+transition: all .4s ease;
+}
+input[type=text]:hover, input[type=image]:hover, input[type=number]:hover
+{
+border: 1px solid #b6bfc0;
+box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .7), 0 0 0 5px #f5f7f8;
+}
+input[type=text]:focus,input[type=image]:focus, input[type=number]:focus{
+border: 1px solid #a8c9e4;
+box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), ◊ ◊ ◊ 5px #e6f2f9;
+}
+input[type=submit],input[type=button] {
+float: center;
+margin-right: 20px;
+margin-top: 20px;
+width: 80px;
+height: 30px;
+font-size: 14px;
+font-weight: bold;
+color: #fff;
+background-color: #acd6ef;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#acd6ef), to
+(#6ec2e8));
+background-image: -moz-linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%); 
+background-image: linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%); 
+border-radius: 30px;
+border: 1px solid #66add6;
+box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
+ cursor: pointer;
+}
+input[type=submit]:hover, input[type=button]:hover{
+
+background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ƒƒ), to
+(#6ec2e8));
+background-image: -moz-linear-gradient(top left 90deg, #b6e2ƒƒ 0%, #6ec2e8 100%);
+ background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+}
+input[type=submit]:active, input[type=button]:active {
+background-image: -webkit-gradient(linear, left top, left bottom, from(#6ec2e8), to
+(#b6e2ff));
+background-image: -moz-linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ƒƒ 100%); 
+background-image: linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ƒƒ 100%);
+}
+#container{
+width: 470px;
+height: 839px; 
+top: 60%;
+Left: 50%;
+margin-left: 30%;
+background: #befafc; 
+border-radius: 6px;
+border: 1px solid #bababa;
+box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+
+}
+</style>
+<body style="background-color:#7b7abb">
+<h1 style="color:crimson" align="middle"><fontsize="10">Welcome</font></h1>
+ {% load staticfiles %}
+<p align="middle"> <img src={% static "Image1.gif" %} width="60% auto" height="40% auto" alt="databook" /> </p>
+<b><p align="middle">Project on Library members data management</p>
+</b><hr/>
+<div id="container">
+<form action="#" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<p style="color:crimson" align="middle"><i>Your Profile_picture </i></p> 
+ <label for="profile_pic"><b>Profile_Pic:</b></label><input type="file" name="profile_pic" id="profile_pic" accept="image/*" required><br>
+
+<p style="color:crimson" align="middle"><i>Enter your Username below</i></p> 
+<label for="Username"><b>Username:</b></label><input type="text" name="username" id="Username" placeholder="Username" required><br>
+
+<p style="color:crimson" align="middle"><i>Enter your name below</i></p>
+<label for="name"><b>Name:</b></label><input type="text" name="fullname" id="name" placeholder="Name with Surname" required><br>
+
+<p style="color:crimson" align="middle"><i>Enter number of book issued below </i></p>
+<label for="no_book_issued"><b>No_book_issued:</b></label><input type="number" name="no_book_issued" id="no_book_issued" required><br>
+
+<p style="color:crimson" align="middle"><i>Enter contact number below </i></p>
+ <label for="contact"><b>contact:</b></label><input type="number" id="contact"  name="contact" required><br>
+<p style="color:crimson" align="middle"><i>Enter Email below </i></p>
+<label for="Email"><b>Email:</b><input type="text" id="Email" name="email" required><br>
+
+<p align="middle"><input type="submit" value="Submit"></p><br> <hr/> 
+</form>
+<a href={% url 'Logout' %}><p align="middle"><input type="button" value="Logout"></p></a>
+</div>
+<p align="center" >This project is made by <b>darshil</b> and <b>sankalp</b> of Kendriya Vidyalaya Rajkot, <i> Class 12<sup>th</sup> (2019-20) </i> under guidance of Head of Computer Science department <b>Mr. Pradip sir</b>.</p> 
+</body>
+</html>
+
+
